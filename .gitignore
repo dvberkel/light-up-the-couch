@@ -1,0 +1,13 @@
+# Prevent people from accidently commiting their .couchapprc file.
+# Below is an example of a .couchapprc file:
+# {
+#	"env": {
+#		"default": {
+#			"db": "http://user:password@localhost:5984/database"
+#		},
+#		"production": {
+#			"db": "http://user:password@userdomain.iriscouch/database"
+#		}
+#	}
+# }
+.couchapprc
