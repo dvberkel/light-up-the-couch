@@ -15,3 +15,9 @@ commandline tool. From the documentation page:
 >The CouchApp command line tool is used to generate code templates in your 
 >application and to push your changes to an instance of couchdb, among other
 >things.
+
+Git Workflow
+------------
+
+We try to follow the git workflow as outlined by 
+[Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/).
