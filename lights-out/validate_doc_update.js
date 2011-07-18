@@ -22,4 +22,9 @@ function (newDoc, oldDoc, userCtx) {
 	
 	require('type');
 	restrict('type', ['description']);
+	
+	if (newDoc.type == 'description') {
+		require('numberOfStates');
+		require('problem');
+	}
 }
