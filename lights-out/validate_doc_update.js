@@ -6,5 +6,20 @@ function (newDoc, oldDoc, userCtx) {
 		}
 	}
 
+	function restrict(field, options, reason) {
+		reason = reason || "Document " + field + " is restricted to " + options.join(":");
+		var allowed = false;
+		for (var index = 0; index < options.length; index++) {
+			if (newDoc[field] == options[index]) {
+				allowed = true;
+				break;
+			}
+		}
+		if (!allowed) {
+			throw({"forbidden" : reason});
+		}
+	}
+	
 	require('type');
+	restrict('type', ['description']);
 }
