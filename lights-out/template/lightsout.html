@@ -3,19 +3,24 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<title>Lighs Out</title>
-		<link rel="stylesheet" type="text/css" href="{{ assets }}/style/lights-out.css">
 		<script type='text/javascript' src='http://code.jquery.com/jquery-1.6.2.js'></script>
+		{{#isDoc}}
+		<link rel="stylesheet" type="text/css" href="{{ assets }}/style/lights-out.css">
 		<script type='text/javascript' src="{{ assets }}/lib/jquery.lightsout.js"></script>
 		<script type='text/javascript'>
-			{{#isDoc}}
 			
 			$(function(){
 				$("#lights-out").create({{ numberOfStates }},{{ problem }}).initialize();
 			});
-			{{/isDoc}}
 		</script>
+		{{/isDoc}}
 	</head>
 	<body>
-		<div id="lights-out"></div>
+		{{#isDoc}}
+			<div id="lights-out"></div>
+		{{/isDoc}}
+		{{^isDoc}}
+			<p>No description given.</p>
+		{{/isDoc}}
 	</body>
 </html>
