@@ -7,13 +7,12 @@
 		<script type='text/javascript' src='http://code.jquery.com/jquery-1.6.2.js'></script>
 		<script type='text/javascript' src="{{ assets }}/lib/jquery.lightsout.js"></script>
 		<script type='text/javascript'>
+			{{#isDoc}}
+			
 			$(function(){
-				$("#lights-out").create(3,[
-					[0, 0, 0, 0],
-					[0, 0, 0, 0],
-					[0, 0, 0, 1]
-				]).initialize();
+				$("#lights-out").create({{ numberOfStates }},{{ problem }}).initialize();
 			});
+			{{/isDoc}}
 		</script>
 	</head>
 	<body>
