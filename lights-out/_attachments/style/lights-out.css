@@ -1,0 +1,27 @@
+.button {
+	display: inline-block;
+	margin: 0px 3px;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	color: rgba(0,0,0,0);
+}
+
+.row {
+	margin: 6px 0px;
+}
+
+.state0 {
+	background-color: lightgrey;
+}
+
+.state1 {
+	background-color: red;
+}
+
+.state2 {
+	background-color: green;
+}
