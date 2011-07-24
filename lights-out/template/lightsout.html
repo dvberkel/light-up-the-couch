@@ -8,19 +8,20 @@
 		<link rel="stylesheet" type="text/css" href="{{ assets }}/style/lights-out.css">
 		<script type='text/javascript' src="{{ assets }}/lib/jquery.lightsout.js"></script>
 		<script type='text/javascript'>
-			
-			$(function(){
-				$("#lights-out").create({{ numberOfStates }},{{ problem }}).initialize();
+			$(window).load(function(){			
+				var l = new LightsOut({{numberOfStates}},{{problem}});
+				l.anew();
+				$(".reset").click(function(){l.anew()});
 			});
 		</script>
 		{{/isDoc}}
 	</head>
 	<body>
-		{{#isDoc}}
-			<div id="lights-out"></div>
-		{{/isDoc}}
-		{{^isDoc}}
-			<p>No description given.</p>
-		{{/isDoc}}
+		<div>
+			<div class="lights-out">No description given</div>
+			<div class="controls">
+				<input type="button" value="reset" class="reset"/>
+			</div>
+		</div>
 	</body>
 </html>

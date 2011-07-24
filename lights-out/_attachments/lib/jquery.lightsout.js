@@ -17,7 +17,7 @@
 
 	$.fn.create = function(q,data){
 		$.setQ(q);
-		return this.each(function(){
+		return this.empty().each(function(){
 			$(this).append($.map(data, function(row) {
 				return "<div class='row'>" +
 				$.map(row, function(value){
@@ -55,3 +55,13 @@
 		return $(".button").normalize().addState().click($.changeNeighbourhood);
 	};
 })(jQuery);
+
+
+var LightsOut = function(q,problem){
+    this.q = q;
+    this.problem = problem;
+    
+    this.anew = function(){
+        $(".lights-out").create(this.q, this.problem).initialize();
+    }
+};
