@@ -23,6 +23,12 @@
 	border-radius: 10px;
 }
 
+.container {
+	width: 600px;
+	margin: 0px auto;
+	text-align: center;
+}
+
 .state0 {
 	background-color: lightgrey;
 }
