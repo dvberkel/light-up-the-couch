@@ -35,6 +35,18 @@ var Controller = function(){
         }
     };
     
+    var setProblem = function(data) {
+        $(".container").empty().each(function(){
+            $(this).append($.map(data, function(row) {
+                return "<div class='row'>" +
+                $.map(row, function(value){
+                    return "<div class='button'>" + value + "</div>";
+                }).join("") +
+                "</div>";
+            }).join(""));
+        });
+    };
+    
     this.removeRow = function(){
         $(".row:last").remove();
     };
@@ -65,6 +77,10 @@ var Controller = function(){
         return parseInt($(".q").text());
     };
     
+    this.setQ = function(q) {
+        $(".q").text(q);
+    }
+    
     this.addButtonHandlers = function() {
         $(".button").click(function(){
             var q = parseInt($(".q").text());
@@ -73,8 +89,11 @@ var Controller = function(){
         });
     };
     
-    this.initialize = function() {
+    this.initialize = function(q,problem) {
         var c = this;
+        c.setQ(q);
+        setProblem(problem);
+        c.addButtonHandlers();
         $(".addRow").click(function(){c.addRow(); c.addButtonHandlers();});
         $(".removeRow").click(function(){c.removeRow()});
         $(".addColumn").click(function(){c.addColumn(); c.addButtonHandlers();});
