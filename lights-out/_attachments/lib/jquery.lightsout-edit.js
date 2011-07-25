@@ -84,5 +84,3 @@ var Controller = function(){
         return c;
     };
 };
-
-var c = new Controller().initialize();
