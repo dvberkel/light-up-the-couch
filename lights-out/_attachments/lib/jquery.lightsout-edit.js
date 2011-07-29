@@ -120,8 +120,8 @@ var Controller = function(){
             'q': parseInt($("#q").text()),
             'problem': getProblem()
         };
-        if ($("#id").val()) {document['id'] = $("#id").val()};
-        if ($("#rev").val()) {document['rev'] = $("#rev").val()};
+        if ($("#id").val()) {document['_id'] = $("#id").val()};
+        if ($("#rev").val()) {document['_rev'] = $("#rev").val()};
         return document;
     };
 };
