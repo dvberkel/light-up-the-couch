@@ -124,6 +124,7 @@ var Controller = function(){
             'numberOfStates': parseInt($("#q").text()),
             'problem': getProblem()
         };
+        if ($("#name").val()) {document['name'] = $("#name").val()};
         if ($("#id").val()) {document['_id'] = $("#id").val()};
         if ($("#rev").val()) {document['_rev'] = $("#rev").val()};
         return document;
