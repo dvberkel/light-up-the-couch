@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Lighs Out</title>
+		<script type='text/javascript' src='/_utils/script/jquery.js'></script>
+		<script type='text/javascript' src='/_utils/script/jquery.couch.js'></script>
+		<link rel="stylesheet" type="text/css" href="{{ assets }}/style/lights-out-edit.css">
+		<script type='text/javascript' src="{{ assets }}/lib/jquery.lightsout-edit.js"></script>
+		<script type='text/javascript'>
+			$(window).load(function(){			
+				var c = new Controller().initialize(
+					{{ numberOfStates }},
+					{{ problem }}
+				);
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<input type="hidden" id="id" value="{{ id }}"/>
+			<input type="hidden" id="rev" value="{{ rev }}"/>
+			<input class="addRow" type="button" value="+ row"/>
+			<input class="removeRow" type="button" value="- row"/>
+			<input class="addColumn" type="button" value="+ column"/>
+			<input class="removeColumn" type="button" value="- column"/>
+			<input class="increaseQ" type="button" value="+"/>
+			<span class="q" id="q">2</span>
+			<input class="decreaseQ" type="button" value="-"/>
+			<input class="save" type="button" value="save">
+			<div class="container"></div>
+		</div>
+	</body>
+</html>

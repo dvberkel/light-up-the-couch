@@ -1,0 +1,15 @@
+.button {
+    display: inline-block;
+    width: 20px; height 20px;
+    padding 10px;
+    margin: 0px 3px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.row {
+    margin: 6px 0px;
+}
