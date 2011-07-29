@@ -112,12 +112,16 @@ var Controller = function(){
         $(".removeColumn").click(function(){c.removeColumn()});
         $(".increaseQ").click(function(){c.increaseQ()});
         $(".decreaseQ").click(function(){c.decreaseQ()});
+        $(".save").click(function(){
+        	$.couch.db("lights-out").saveDoc(c.describe());
+        });
         return c;
     };
     
     this.describe = function(){
          var document = {
-            'q': parseInt($("#q").text()),
+         	'type': 'description',
+            'numberOfStates': parseInt($("#q").text()),
             'problem': getProblem()
         };
         if ($("#id").val()) {document['_id'] = $("#id").val()};
