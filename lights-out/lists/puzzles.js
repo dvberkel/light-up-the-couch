@@ -9,7 +9,8 @@ function(head, req) {
 	while (row = getRow()) {
 		var context = {
 			'assets': assets,
-			'id' : row.id
+			'id' : row.id,
+			'name': row.value.name
 		};
 		send(Mustache.to_html(ddoc.template.partial.puzzlesRow, context));
 	}
