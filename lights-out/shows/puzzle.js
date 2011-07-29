@@ -8,6 +8,7 @@ function(doc, req) {
 		context = {
 			"isDoc" : true,
 			assets : path.asset(),
+			name : doc.name,
 			numberOfStates : doc.numberOfStates,
 			problem :  JSON.stringify(doc.problem)
 		};
