@@ -9,6 +9,8 @@ function(doc, req) {
 		problem: JSON.stringify([]) 
 	};
 	if (doc && doc.type == 'description') {
+		context['id'] = doc._id;
+		context['rev'] = doc._rev;
 		context['numberOfState'] = doc.numberOfStates;
 		context['problem'] = JSON.stringify(doc.problem);
 	}
