@@ -11,7 +11,8 @@
 			$(window).load(function(){			
 				var c = new Controller().initialize(
 					{{ numberOfStates }},
-					{{ problem }}
+					{{ problem }},
+					"{{ assets }}/_list/puzzles/descriptions"
 				);
 				
 				$(".feedback").hide();

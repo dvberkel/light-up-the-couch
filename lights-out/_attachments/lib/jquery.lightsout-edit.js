@@ -101,7 +101,7 @@ var Controller = function(){
         });
     };
     
-    this.initialize = function(q,problem) {
+    this.initialize = function(q,problem,redirectUrl) {
         var c = this;
         c.setQ(q);
         setProblem(problem);
@@ -114,6 +114,11 @@ var Controller = function(){
         $(".decreaseQ").click(function(){c.decreaseQ()});
         $(".save").click(function(){
         	$.couch.db("lights-out").saveDoc(c.describe(),{
+        		success: function() {
+        			if (redirectUrl) {
+         				window.location.replace(redirectUrl);
+        			}
+        		},
         		error: function(status, error, reason){
         			$(".feedback").show().children().empty().append(
         				"<li>" + reason + "</li>"
