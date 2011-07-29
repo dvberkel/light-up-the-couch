@@ -113,7 +113,13 @@ var Controller = function(){
         $(".increaseQ").click(function(){c.increaseQ()});
         $(".decreaseQ").click(function(){c.decreaseQ()});
         $(".save").click(function(){
-        	$.couch.db("lights-out").saveDoc(c.describe());
+        	$.couch.db("lights-out").saveDoc(c.describe(),{
+        		error: function(status, error, reason){
+        			$(".feedback").show().children().empty().append(
+        				"<li>" + reason + "</li>"
+        			);
+        		}
+        	});
         });
         return c;
     };
