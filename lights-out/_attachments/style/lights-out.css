@@ -14,6 +14,21 @@
 	margin: 6px 0px;
 }
 
+.lights-out {
+	display: inline-block;
+	background: #FFFF99;
+	width: auto;
+	height: auto;
+	padding: 10px 15px;
+	border-radius: 10px;
+}
+
+.container {
+	width: 600px;
+	margin: 0px auto;
+	text-align: center;
+}
+
 .state0 {
 	background-color: lightgrey;
 }
