@@ -24,6 +24,7 @@ function (newDoc, oldDoc, userCtx) {
 	restrict('type', ['description']);
 	
 	if (newDoc.type == 'description') {
+		require('name');
 		require('numberOfStates');
 		require('problem');
 	}

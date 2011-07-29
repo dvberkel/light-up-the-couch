@@ -13,3 +13,16 @@
 .row {
     margin: 6px 0px;
 }
+
+.feedback {
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    border-radius: 3px;
+    background-color: rgba(255,0,0,0.3);
+    padding: 5px;
+}
+
+.feedback ul {
+	list-style-type: none;
+}

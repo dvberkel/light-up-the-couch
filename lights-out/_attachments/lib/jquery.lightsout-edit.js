@@ -101,7 +101,7 @@ var Controller = function(){
         });
     };
     
-    this.initialize = function(q,problem) {
+    this.initialize = function(q,problem,redirectUrl) {
         var c = this;
         c.setQ(q);
         setProblem(problem);
@@ -113,7 +113,18 @@ var Controller = function(){
         $(".increaseQ").click(function(){c.increaseQ()});
         $(".decreaseQ").click(function(){c.decreaseQ()});
         $(".save").click(function(){
-        	$.couch.db("lights-out").saveDoc(c.describe());
+        	$.couch.db("lights-out").saveDoc(c.describe(),{
+        		success: function() {
+        			if (redirectUrl) {
+         				window.location.replace(redirectUrl);
+        			}
+        		},
+        		error: function(status, error, reason){
+        			$(".feedback").show().children().empty().append(
+        				"<li>" + reason + "</li>"
+        			);
+        		}
+        	});
         });
         return c;
     };
@@ -124,6 +135,7 @@ var Controller = function(){
             'numberOfStates': parseInt($("#q").text()),
             'problem': getProblem()
         };
+        if ($("#name").val()) {document['name'] = $("#name").val()};
         if ($("#id").val()) {document['_id'] = $("#id").val()};
         if ($("#rev").val()) {document['_rev'] = $("#rev").val()};
         return document;

@@ -11,6 +11,7 @@ function(doc, req) {
 	if (doc && doc.type == 'description') {
 		context['id'] = doc._id;
 		context['rev'] = doc._rev;
+		context['name'] = doc.name;
 		context['numberOfState'] = doc.numberOfStates;
 		context['problem'] = JSON.stringify(doc.problem);
 	}
