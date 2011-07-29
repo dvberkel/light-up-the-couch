@@ -47,6 +47,18 @@ var Controller = function(){
         });
     };
     
+    var getProblem = function() {
+        var data = [];
+        $(".row").each(function(){
+            var row = [];
+            $(this).children().each(function(){
+                row.push(parseInt($(this).text()))
+            });
+            data.push(row);
+        });
+        return data;
+    }
+    
     this.removeRow = function(){
         $(".row:last").remove();
     };
@@ -101,5 +113,15 @@ var Controller = function(){
         $(".increaseQ").click(function(){c.increaseQ()});
         $(".decreaseQ").click(function(){c.decreaseQ()});
         return c;
+    };
+    
+    this.describe = function(){
+         var document = {
+            'q': parseInt($("#q").text()),
+            'problem': getProblem()
+        };
+        if ($("#id").val()) {document['id'] = $("#id").val()};
+        if ($("#rev").val()) {document['rev'] = $("#rev").val()};
+        return document;
     };
 };
